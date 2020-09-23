@@ -1,7 +1,9 @@
 const fs = require('fs')
 const http = require('http')
 
-http.createServer((request, response) => {
+const PORT = 8080
+
+const server = http.createServer((request, response) => {
   const body = []
 
   request.on('data', (chunk) => {
@@ -16,4 +18,7 @@ http.createServer((request, response) => {
 
   response.writeHead(201)
   response.end()
-}).listen(8080)
+})
+
+server.listen(PORT)
+console.info(`Listening on 127.0.0.1:${PORT}`)

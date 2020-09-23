@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "description": "A simple HTTP server which dumps all incoming JSON requests into files.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Mario Uher <mario@yodel.io>",
+  "license": "MIT"
+}
