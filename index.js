@@ -3,13 +3,15 @@ const http = require('http')
 
 const PORT = 8080
 
+let count = 0
+
 const server = http.createServer((request, response) => {
   const body = []
 
   request.on('data', (chunk) => {
     body.push(chunk)
   }).on('end', () => {
-    const filename = `requests/${Date.now()}.json`
+    const filename = `requests/${++count}-${Date.now()}.json`
     const content = Buffer.concat(body).toString()
 
     fs.writeFileSync(filename, content)
